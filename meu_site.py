@@ -9,8 +9,16 @@ app = Flask(__name__)
 
 @app.route("/")
 def homepage():
-    return "Esse é meu primeiro site"
+    return "Esse é meu primeiro site."
+
+# cria outra página
+
+
+@app.route("/contatos")
+def contatos():
+    return "<p>Contatos: email</p><p>: e telefone (xx)</p>"
 
 
 # colocar o site no ar
-app.run()
+if __name__ == "__main__":
+    app.run(debug=True)
