@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -9,14 +9,19 @@ app = Flask(__name__)
 
 @app.route("/")
 def homepage():
-    return "Esse é meu primeiro site."
+    return render_template("homepage.html")
 
 # cria outra página
 
 
 @app.route("/contatos")
 def contatos():
-    return "<p>Contatos: email</p><p>: e telefone (xx)</p>"
+    return render_template("contatos.html")
+
+
+@app.route("/usuarios/<nome_usuario>")
+def usuarios(nome_usuario):
+    return render_template("usuarios.html", nome_usuario=nome_usuario)
 
 
 # colocar o site no ar
