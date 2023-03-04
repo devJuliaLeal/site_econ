@@ -5,10 +5,9 @@ app = Flask(__name__)
 
 # criar a primeira página
 # route -> meusite.com/contatos
-# app foi definido anteriormente
+# função -> o que você vai exibir naqula página
 
-@app.route()
-# função -> o que vose vai exibir naqula página
+@app.route("/")
 def homepage():
     return "Esse é meu primeiro site"
 
